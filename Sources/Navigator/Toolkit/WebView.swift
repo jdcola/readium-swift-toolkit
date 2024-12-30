@@ -66,4 +66,10 @@ final class WebView: WKWebView {
             contentView.removeInteraction(dragInteraction)
         }
     }
+    
+    @available(iOS 13.0, *)
+    override func buildMenu(with builder: UIMenuBuilder) {
+        editingActions.buildMenu(with: builder)
+        super.buildMenu(with: builder)
+    }
 }
